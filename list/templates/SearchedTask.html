@@ -1,4 +1,4 @@
-{% extends "TemplateListObject.html" %}
+{% extends "Base.html" %}
 {% block title %}
 <h2 align="center">Searched by tag: {{ tag }}</h2>
 {% endblock title %}
@@ -9,7 +9,7 @@
 {% for task in task_list %}
     {% if user.is_staff %}
     <p>Task: <a href="{% url 'detail_task' board.id task.id %}">{{ task.description }}
-        (from board: {{ board.title }}, creator={{ board.user_creator }})</a></p>
+        (from board: {{ board.title }}, creator={{ board.user_creator.name }})</a></p>
     <p>Status: {{ task.task_status }}</p><br>
     {% else %}
     <p>Task: <a href="{% url 'detail_task' board.id task.id %}">{{ task.description }}

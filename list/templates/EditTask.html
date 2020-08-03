@@ -1,4 +1,4 @@
-{% extends "TemplateListObject.html" %}
+{% extends "Base.html" %}
 {% block title %}
 <h3 align="center">{{ title_page }}</h3>
 {% endblock title %}
@@ -15,7 +15,7 @@
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-    <p>{{ message }}</p>
+    <li>{{ message }}</li>
     {% endfor %}
 </ul>
 {% endif %}

@@ -1,5 +1,5 @@
+from django.contrib.auth.models import User
 from django.db import models
-from django.contrib.auth.models import User, AbstractUser
 
 from TODO import settings
 
@@ -32,3 +32,4 @@ class Tag(models.Model):
 
     def __str__(self):
         return self.text
+

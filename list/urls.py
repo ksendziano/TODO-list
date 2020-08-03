@@ -1,7 +1,7 @@
-from django.urls import path, include
-from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.urls import path
+from . import views
 
 urlpatterns = [
     path('board<int:board_pk>/task<int:task_pk>/get_task_file', views.get_task_file, name='get_task_file'),
@@ -17,9 +17,6 @@ urlpatterns = [
     path('board<int:pk>/edit_board', views.edit_board, name='edit_board'),
     path('search_tag_<str:tag>/', views.search_tag, name='search_tag'),
     path('get_json', views.get_json, name='get_json'),
-    path('sign_up', views.sign_up, name='sign_up'),
-    path('logout/', views.log_out, name='logout'),
-    path('login',views.log_in,name='login'),
     path('', views.board_list, name='main-page'),
     path('board<int:pk>/', views.task_list, name='Board'),
 ]

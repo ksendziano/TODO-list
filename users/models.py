@@ -49,12 +49,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     objects = UserManager()
 
     def get_absolute_url(self):
-        return "/users/%i/" % (self.pk)
+        return "/users/%i/" % self.pk
+
     def get_email(self):
         return self.email
-
-    class Meta:
-        db_table = 'auth_user'
 
     def __str__(self):
         return self.name

@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'TODO.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'todo',
+        'NAME': 'zxc',
         'USER': 'user',
         'PASSWORD': 'user',
         'HOST': 'localhost',

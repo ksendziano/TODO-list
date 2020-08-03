@@ -1,4 +1,4 @@
-{% extends "TemplateListObject.html" %}
+{% extends "Base.html" %}
 {% block title %}
 <h2 align="center">Sign Up</h2>
 {% endblock title %}
@@ -11,10 +11,9 @@
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-    <p>{{ message }}</p>
+    <li>{{ message }}</li>
     {% endfor %}
 </ul>
 {% endif %}
 <p><a href="{% url 'main-page' %}">Login</a></p>
-</body>
 {% endblock content %}
