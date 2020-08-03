@@ -24,7 +24,6 @@ SECRET_KEY = '99n41jkii3*!yivie3w0f%tq1sm8nl3k+p09+ddmb==99ibuz_'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-<<<<<<< HEAD
 ALLOWED_HOSTS = ['127.0.0.1']
 
 # Application definition
@@ -33,13 +32,6 @@ AUTH_USER_MODEL = 'users.User'
 
 INSTALLED_APPS = [
     'users',
-=======
-ALLOWED_HOSTS = []
-
-# Application definition
-
-INSTALLED_APPS = [
->>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
     'list.apps.TodoConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -84,9 +76,8 @@ WSGI_APPLICATION = 'TODO.wsgi.application'
 
 DATABASES = {
     'default': {
-<<<<<<< HEAD
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'zxc',
+        'NAME': 'asd',
         'USER': 'user',
         'PASSWORD': 'user',
         'HOST': 'localhost',
@@ -94,14 +85,6 @@ DATABASES = {
     }
 }
 
-=======
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-AUTHENTICATION_BACKENDS = ['list.backends.EmailAuthBackend']
->>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators

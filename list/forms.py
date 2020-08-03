@@ -1,22 +1,5 @@
 from django import forms
-<<<<<<< HEAD
 from .models import Task, Board
-=======
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.forms import ModelForm
-from .models import *
-
-
-class SignUpForm(forms.Form):
-    username = forms.CharField(max_length=50)
-    email = forms.EmailField()
-    password = forms.CharField(widget=forms.PasswordInput)
-
-
-class FormLogin(forms.Form):
-    email = forms.CharField()
-    password = forms.CharField(widget=forms.PasswordInput)
->>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
 
 
 class CreateBoardForm(forms.ModelForm):

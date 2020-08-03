@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 {% extends "Base.html" %}
-=======
-{% extends "TemplateListObject.html" %}
->>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
 {% block title %}
 <h2 align="center">Sign Up</h2>
 {% endblock title %}
@@ -15,17 +11,9 @@
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
-<<<<<<< HEAD
     <li>{{ message }}</li>
-=======
-    <p>{{ message }}</p>
->>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
     {% endfor %}
 </ul>
 {% endif %}
 <p><a href="{% url 'main-page' %}">Login</a></p>
-<<<<<<< HEAD
-=======
-</body>
->>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
 {% endblock content %}
