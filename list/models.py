@@ -1,15 +1,15 @@
 from django.contrib.auth.models import User
 from django.db import models
 
-from TODO import settings
+from TODO_list import settings
 
 
 class Task(models.Model):
     description = models.TextField(max_length=200, blank=False)
     scheduled_deadline = models.DateField(auto_now_add=False)
     real_deadline = models.DateField(auto_now_add=True)
-    status = [('TODO', 'TODO'),  ('IN_PROGRESS', 'IN_PROGRESS'), ('COMPLETED', 'COMPLETED'), ('CANCELED', 'CANCELED')]
-    task_status = models.CharField(max_length=11, choices=status, default='TODO')
+    status = [('TODO_list', 'TODO_list'),  ('IN_PROGRESS', 'IN_PROGRESS'), ('COMPLETED', 'COMPLETED'), ('CANCELED', 'CANCELED')]
+    task_status = models.CharField(max_length=11, choices=status, default='TODO_list')
     file = models.FileField(default=None, blank=True)
     parent_board = models.ForeignKey('Board', on_delete=models.CASCADE, default=None)
 
