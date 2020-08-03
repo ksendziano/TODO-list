@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% extends "Base.html" %}
+=======
+{% extends "TemplateListObject.html" %}
+>>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
 {% block title %}
 <h3 align="center">{{ title_page }}</h3>
 {% endblock title %}
@@ -10,12 +14,21 @@
     {{ edit_task_form.as_p }}
     <label for="scheduled_deadline">Deadline</label>
     <p><input name="scheduled_deadline" id="scheduled_deadline" type="date"></p>
+<<<<<<< HEAD
+=======
+    <label for="real_deadline">Real deadline</label>
+    <p><input name="real_deadline" id="real_deadline" type="date"></p>
+>>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
     <input type="submit" value="Edit">
 </form>
 {% if messages %}
 <ul class="messages">
     {% for message in messages %}
+<<<<<<< HEAD
     <li>{{ message }}</li>
+=======
+    <p>{{ message }}</p>
+>>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
     {% endfor %}
 </ul>
 {% endif %}

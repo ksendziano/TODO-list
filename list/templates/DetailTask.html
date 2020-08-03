@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 {% extends "Base.html" %}
+=======
+{% extends "TemplateListObject.html" %}
+>>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
 {% block title %}
 <h2 align="center">Task</h2>
 {% endblock title %}
@@ -6,6 +10,7 @@
 <body style="background: {{ color }}">
 <p><a href="{% url 'Board' board.id %}">back</a></p><br>
 <p><a href="{% url 'edit_task' board.id task.id %}">Edit task</a></p><br>
+<<<<<<< HEAD
 <p><a href="{% url 'add_tag' board.id task.id %}">Add tag</a></p><br><br><br>
 {% if task.task_status != 'COMPLETED' %}
 <p><a href="{% url 'complete_task' board.id task.id %}">Complete task</a></p><br>
@@ -20,6 +25,12 @@
 {% if task.task_status == 'COMPLETED' %}
 <p>Real deadline: {{ task.real_deadline }}</p>
 {% endif %}
+=======
+<p><p><a href="{% url 'add_tag' board.id task.id %}">Add tag</a></p></p><br><br><br>
+<p>Description: {{ task.description }}</p>
+<p>Deadline: {{ task.scheduled_deadline }}</p>
+<p>Real deadline: {{ task.real_deadline }}</p>
+>>>>>>> f9bd64681f6d662cbe8ab56681e597bccae2ba79
 <p>Status: {{ task.task_status }}</p>
 {% if task.file %}
 <p><a href="{% url 'get_task_file' board.id task.id %}">File: {{ task.file }}</a></p>
