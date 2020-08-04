@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'TODO_list.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'qwe123',
+        'NAME': '1212',
         'USER': 'user',
         'PASSWORD': 'user',
         'HOST': 'localhost',
