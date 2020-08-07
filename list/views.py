@@ -34,7 +34,7 @@ def create_board(request):
     if request.user.is_authenticated:
         if request.method == 'POST':
             color = request.POST.get('color', None)
-            if len(color) != 7 or color[0] != '#' or str(color[1:]).isalpha() is not True:
+            if len(color) != 7 or color[0] != '#' or str(color[1:]).isalpha() is not True: # Опять валидация не там, где надо, они должны быть отдельно от всего остального, не стал разбираться с грамотностью самой валидации
                 messages.add_message(request, messages.WARNING, 'Color format is: #AAAAAA')
                 return render(request, 'CreateBoard.html', context={'create_board_form': CreateBoardForm()})
             title_board = request.POST.get('title', None)
@@ -62,12 +62,12 @@ def create_task(request, pk):
             description = request.POST.get('description', None)
             scheduled_deadline = request.POST.get('scheduled_deadline', None)
             error = date_validate(scheduled_deadline)
-            if error != 'Okay':
+            if error != 'Okay': # Смешно)))
                 messages.add_message(request, messages.WARNING, error)
                 return redirect(reverse('create_task', kwargs={'pk': pk}))
             status = request.POST.get('task_status', None)
             file = request.FILES.get('file', None)
-            if file is None or file.size > 8388608:
+            if file is None or file.size > 8388608:# Константа
                 file = None
             board = get_object_or_404(Board, pk=pk)
             task = board.task_set.create(description=description,
@@ -76,7 +76,7 @@ def create_task(request, pk):
             task.save()
     return redirect(reverse('Board', kwargs={'pk': pk}))
 
-
+# Не стал вникать, слишком много кода, переделай /разбей на несколько
 def replace_task(request, board_pk, task_pk):
     if request.user.is_authenticated:
         if request.method == 'POST':
@@ -114,7 +114,7 @@ def detail_task(request, task_pk, board_pk):
         board = get_object_or_404(Board, pk=board_pk)
         task = board.task_set.get(pk=task_pk)
         board_object_list = get_all_boards(request.user)
-        replace_task_form = ReplaceTaskForm(board_object_list)
+        replace_task_form = ReplaceTaskForm(board_object_list) # зачем ты везде заводишь переменные, если используешь их потом 1 раз? Только добавляешь строчек кода ненужных
         return render(request, 'DetailTask.html',
                       context={'task': task, 'board': board,
                                'edit_task_form': CreateTaskForm(),
@@ -136,9 +136,9 @@ def edit_board(request, pk):
     if request.user.is_authenticated:
         if request.method == 'POST':
             board = get_object_or_404(Board, pk=pk)
-            new_board_title = request.POST.get('title', None)
-            new_board_color = request.POST.get('color', None)
-            if len(new_board_color) != 7 or new_board_color[0] != '#' or str(new_board_color[1:]).isalpha() is not True:
+            new_board_title = request.POST.get('title', None)# нинада
+            new_board_color = request.POST.get('color', None)# нинада
+            if len(new_board_color) != 7 or new_board_color[0] != '#' or str(new_board_color[1:]).isalpha() is not True: # Дублирование, поэтмоу и написал, что валидации должны быть в отдельных методах и не в этих файлах
                 messages.add_message(request, messages.WARNING, 'Color format is: #AAAAAA')
                 return render(request, 'EditBoard.html', context={'title_page': 'Edit board',
                                                                   'edit_board_form': CreateBoardForm(),
